@@ -29,8 +29,29 @@ import ViewCourse from "./pages/ViewCourse";
 import InstructorDashboard from "./components/core/Dashboard/InstructorDashboard/InstructorDashboard";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import { setToken } from "./reducers/Slices/authSlice";
+import { setUser } from "./reducers/Slices/profileSlice";
+import { jwtDecode } from "jwt-decode";
+import { resetCart } from "./reducers/Slices/cartSlice";
 function App() {
-  const dispatch = useDispatch()
+
+  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+        const decoded = jwtDecode(token);
+        if (decoded.exp * 1000 < Date.now()) {  // Convert `exp` to milliseconds
+            // localStorage.removeItem("token");
+            // localStorage.removeItem('user');
+            localStorage.clear();
+            dispatch(setToken(null));
+            dispatch(setUser(null));
+            resetCart()
+        }
+    }
+  }, [dispatch]);
+
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.profile)
 

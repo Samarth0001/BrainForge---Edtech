@@ -2,7 +2,7 @@ import { FiTrash2 } from "react-icons/fi"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-import { deleteProfile } from "../../../../services/operations/settingsAPI"
+// import { deleteProfile } from "../../../../services/operations/settingsAPI"
 import { useState } from "react";
 import ConfirmationModal from "../../../Common/ConfirmationModal";
 
@@ -37,7 +37,7 @@ export default function DeleteAccount() {
               text2:"Your account will get Deleted",
               btn1Text:"Delete",
               btn2Text:"Cancel",
-              btn1Handler:()=> dispatch(deleteProfile(token,navigate)),
+              // btn1Handler:()=> dispatch(deleteProfile(token,navigate)),
               btn2Handler:()=> setConfirmationModal(null)
             })}
           >

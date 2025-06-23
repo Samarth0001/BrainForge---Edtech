@@ -7,7 +7,7 @@ import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
 import { resetCart } from "../../reducers/Slices/cartSlice"
 const {
-  SENDOTP_API, 
+  SENDOTP_API,  
   SIGNUP_API,
   LOGIN_API,
   RESETPASSTOKEN_API,

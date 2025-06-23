@@ -24,8 +24,8 @@ function loadScript (src) {
 export async function buyCourse(token, courses,userDetails, navigate, dispatch ){
     const toastId=toast.loading("Loading.....");
     try{
-        // let res=loadScript("https://checkout.razorpay.com/v1/checkout.js");
-        let res = true;
+        let res=loadScript("https://checkout.razorpay.com/v1/checkout.js");
+        // let res = true;
         if(!res){
             toast.error("Razorpay SDK failed to load")
             return;
@@ -40,7 +40,7 @@ export async function buyCourse(token, courses,userDetails, navigate, dispatch )
         console.log("printing order response:", orderResponse);
         // create options
         var options = {
-            "key": process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+            "key": process.env.REACT_APP_RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
             "amount": `${orderResponse.data.data.amount}`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": orderResponse.data.data.currency,
             "name": "Learn Hub", //your business name

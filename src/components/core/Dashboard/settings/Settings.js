@@ -1,8 +1,8 @@
 import React from 'react'
 import ChangeProfilePicture from './ChangeProfilePicture'
-import EditProfile from './EditProfile'
-import UpdatePassword from './UpdatePassword'
-import DeleteAccount from './DeleteAccount'
+// import EditProfile from './EditProfile'
+// import UpdatePassword from './UpdatePassword'
+// import DeleteAccount from './DeleteAccount'
 function Settings() {
   return (
     <>
@@ -12,11 +12,11 @@ function Settings() {
     {/* Change Profile Picture */}
     <ChangeProfilePicture />
     {/* Profile */}
-    <EditProfile />
+    {/* <EditProfile /> */}
     {/* Password */}
-    <UpdatePassword />
+    {/* <UpdatePassword /> */}
     {/* Delete Account */}
-    <DeleteAccount />
+    {/* <DeleteAccount /> */}
   </>
 
   )

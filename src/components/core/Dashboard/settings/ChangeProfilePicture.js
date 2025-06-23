@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { FiUpload } from "react-icons/fi"
 import { useDispatch, useSelector } from "react-redux"
 
-import { updateDisplayPicture } from "../../../../services/operations/settingsAPI"
+// import { updateDisplayPicture } from "../../../../services/operations/settingsAPI"
 import IconBtn from "../../../Common/IconBtn"
 export default function ChangeProfilePicture() {
   const { token } = useSelector((state) => state.auth)
@@ -43,9 +43,9 @@ export default function ChangeProfilePicture() {
       const formData = new FormData()
       formData.append("displayPicture", imageFile)
       // console.log("formdata", formData)
-      dispatch(updateDisplayPicture(token, formData)).then(() => {
-        setLoading(false)
-      })
+      // dispatch(updateDisplayPicture(token, formData)).then(() => {
+      //   setLoading(false)
+      // })
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message)
     }

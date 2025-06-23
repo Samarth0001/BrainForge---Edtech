@@ -158,12 +158,8 @@ exports.getEnrolledCourses = async (req, res) => {
 		let totalDurationInSeconds = 0
 		SubsectionLength = 0
 		for (var j = 0; j < userDetails.courses[i].courseContent.length; j++) {
-		  totalDurationInSeconds += userDetails.courses[i].courseContent[
-			j
-		  ].subSection.reduce((acc, curr) => acc + parseInt(curr.timeDuration), 0)
-		  userDetails.courses[i].totalDuration = convertSecondsToDuration(
-			totalDurationInSeconds
-		  )
+		  totalDurationInSeconds += userDetails.courses[i].courseContent[j].subSection.reduce((acc, curr) => acc + parseInt(curr.timeDuration), 0)
+		  userDetails.courses[i].totalDuration = convertSecondsToDuration(totalDurationInSeconds)
 		  SubsectionLength +=
 			userDetails.courses[i].courseContent[j].subSection.length
 		}
@@ -177,10 +173,7 @@ exports.getEnrolledCourses = async (req, res) => {
 		} else {
 		  // To make it up to 2 decimal point
 		  const multiplier = Math.pow(10, 2)
-		  userDetails.courses[i].progressPercentage =
-			Math.round(
-			  (courseProgressCount / SubsectionLength) * 100 * multiplier
-			) / multiplier
+		  userDetails.courses[i].progressPercentage = Math.round((courseProgressCount / SubsectionLength) * 100 * multiplier) / multiplier
 		}
 	  }
   

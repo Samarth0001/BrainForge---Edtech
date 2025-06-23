@@ -52,7 +52,7 @@ function Sidebar({small}) {
             <span>
               Logout
             </span>
-            </div>
+          </div>
         </button>
       </div>
       {confirmationModal && <div className="fixed inset-0 z-[1000] grid place-items-center overflow-auto bg-white bg-opacity-10 backdrop-blur-sm">
